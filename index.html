@@ -4,41 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranav Jangamareddy | Portfolio</title>
+
+    <title>Pranav Jangamareddy | Finance Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f7fa;
-            color: #222;
+            background-color: #f4f6f8;
+            color: #1f2937;
             line-height: 1.6;
         }
 
-        /* Navigation */
+        /* NAVIGATION */
+
         nav {
             background-color: #111827;
-            padding: 18px 10%;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 18px 10%;
             position: sticky;
             top: 0;
+            z-index: 1000;
         }
 
         nav h2 {
-            color: white;
+            font-size: 21px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
             font-size: 15px;
         }
 
@@ -46,16 +56,17 @@
             color: #60a5fa;
         }
 
-        /* Hero Section */
+        /* HERO SECTION */
+
         .hero {
             background-color: #1f2937;
             color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 110px 20px;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 10px;
         }
 
@@ -63,29 +74,78 @@
             font-size: 22px;
             color: #93c5fd;
             margin-bottom: 25px;
+            font-weight: normal;
         }
 
         .hero p {
-            max-width: 750px;
-            margin: auto;
-            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 19px;
+            line-height: 1.8;
         }
 
-        /* Main Sections */
+        /* BUTTONS */
+
+        .button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            margin: 5px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            border: 1px solid #93c5fd;
+        }
+
+        /* GENERAL SECTIONS */
+
         section {
             max-width: 1100px;
             margin: auto;
-            padding: 70px 20px;
+            padding: 75px 20px;
         }
 
         section h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
             text-align: center;
+            font-size: 34px;
             color: #111827;
+            margin-bottom: 15px;
         }
 
-        /* Skills */
+        .section-description {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            color: #6b7280;
+        }
+
+        /* ABOUT */
+
+        .about-card {
+            background-color: white;
+            max-width: 850px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-card p {
+            margin-bottom: 15px;
+        }
+
+        /* SKILLS */
+
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -95,13 +155,51 @@
 
         .skill {
             background-color: white;
-            padding: 12px 20px;
+            padding: 14px 22px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        /* Projects */
+        .skill:hover {
+            transform: translateY(-3px);
+        }
+
+        /* EXPERIENCE */
+
+        .experience-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .experience-card h3 {
+            color: #1d4ed8;
+            margin-bottom: 5px;
+        }
+
+        .experience-card h4 {
+            margin-bottom: 5px;
+        }
+
+        .date {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .experience-card ul {
+            margin-left: 20px;
+        }
+
+        .experience-card li {
+            margin-bottom: 8px;
+        }
+
+        /* PROJECTS */
+
         .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -112,159 +210,377 @@
             background-color: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card h3 {
-            margin-bottom: 15px;
             color: #1d4ed8;
+            margin-bottom: 15px;
         }
 
         .project-card p {
             margin-bottom: 20px;
+            flex-grow: 1;
         }
 
-        .project-card a {
-            text-decoration: none;
-            color: white;
-            background-color: #2563eb;
-            padding: 10px 16px;
-            border-radius: 6px;
-            display: inline-block;
+        /* PROJECT DETAILS */
+
+        .project-detail {
+            background-color: white;
+            margin-bottom: 25px;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
         }
 
-        .project-card a:hover {
-            background-color: #1d4ed8;
+        .project-detail h3 {
+            color: #1d4ed8;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
-        /* Footer */
+        .project-detail p {
+            margin-bottom: 12px;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .certification {
+            background-color: white;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+
         footer {
             background-color: #111827;
             color: white;
             text-align: center;
-            padding: 25px;
-            margin-top: 40px;
+            padding: 30px 20px;
         }
 
-        /* Mobile */
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 36px;
-            }
+        /* MOBILE */
+
+        @media (max-width: 700px) {
 
             nav {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
+                padding: 15px;
             }
 
-            nav a {
-                margin: 0 8px;
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .hero p {
+                font-size: 17px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
+
     <nav>
+
         <h2>Pranav Jangamareddy</h2>
 
-        <div>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
     </nav>
 
-    <!-- Personal Statement -->
-    <header class="hero" id="about">
+
+    <!-- PERSONAL STATEMENT -->
+
+    <header class="hero">
+
         <h1>Pranav Jangamareddy</h1>
 
-        <h2>Finance Student | Financial Analysis | Business Analytics</h2>
+        <h2>Finance Student | Investment Research | Financial Analysis</h2>
 
         <p>
-            Finance student at Rutgers Business School with experience in corporate
-            finance and a strong interest in financial analysis, technology, and
-            data-driven decision-making.
+            Rutgers Business School finance student with experience in investment
+            research and corporate finance, combining financial analysis with
+            technology to support data-driven investment and business decisions.
         </p>
+
+        <a href="#projects" class="button">
+            View My Projects
+        </a>
+
+        <a href="https://www.linkedin.com/in/pjangamareddy"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="button secondary-button">
+            LinkedIn
+        </a>
+
     </header>
 
-    <!-- Skills -->
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p class="section-description">
+            Finance, investment research, technology, and data analysis.
+        </p>
+
+        <div class="about-card">
+
+            <p>
+                I am pursuing a Bachelor of Science in Finance at Rutgers Business
+                School, with an expected graduation date of May 2028.
+            </p>
+
+            <p>
+                My experience includes investment research at an early-stage startup
+                fund and corporate finance experience in the pharmaceutical industry.
+                I am interested in applying financial analysis, technology, and
+                research to investment and business decisions.
+            </p>
+
+            <p>
+                My interests include investment research, financial modeling,
+                portfolio analysis, artificial intelligence, and the growing
+                intersection between finance and technology.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
     <section id="skills">
 
         <h2>Skills</h2>
 
+        <p class="section-description">
+            Technical and professional skills developed through coursework,
+            professional experience, and independent projects.
+        </p>
+
         <div class="skills-container">
 
-            <div class="skill">Financial Analysis</div>
             <div class="skill">Financial Modeling</div>
+            <div class="skill">Financial Analysis</div>
+            <div class="skill">Investment Research</div>
+            <div class="skill">Forecasting</div>
             <div class="skill">Microsoft Excel</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Tableau</div>
-            <div class="skill">Data Analysis</div>
-            <div class="skill">Budgeting & Forecasting</div>
-            <div class="skill">Financial Reporting</div>
+            <div class="skill">Python</div>
+            <div class="skill">Bloomberg Terminal</div>
             <div class="skill">PowerPoint</div>
-            <div class="skill">Research</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">Equity Research</div>
+            <div class="skill">HTML</div>
+            <div class="skill">Java</div>
 
         </div>
 
     </section>
 
-    <!-- Projects -->
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+        <h2>Experience</h2>
+
+        <p class="section-description">
+            Professional experience in investment research and corporate finance.
+        </p>
+
+
+        <div class="experience-card">
+
+            <h3>EQIQ Capital</h3>
+
+            <h4>Research Analyst</h4>
+
+            <p class="date">
+                September 2025 – August 2026 | Remote
+            </p>
+
+            <ul>
+
+                <li>
+                    Evaluated 25+ early-stage AI and SaaS companies by analyzing
+                    business models, competitive positioning, growth prospects,
+                    and investment risks.
+                </li>
+
+                <li>
+                    Contributed research supporting three investment decisions.
+                </li>
+
+                <li>
+                    Authored 5+ research reports covering AI infrastructure,
+                    LLM applications, and SaaS business models.
+                </li>
+
+                <li>
+                    Built Python workflows to analyze startup funding,
+                    market-size, and competitor data across more than
+                    25 investment targets.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>MSN Labs</h3>
+
+            <h4>Corporate Finance Summer Intern</h4>
+
+            <p class="date">
+                June 2025 – August 2025 | Piscataway, New Jersey
+            </p>
+
+            <ul>
+
+                <li>
+                    Built Excel forecasting models for budget planning that
+                    improved forecast accuracy by approximately 8%.
+                </li>
+
+                <li>
+                    Supported the financial close process by reconciling large
+                    datasets and preparing more than 50 journal entries.
+                </li>
+
+                <li>
+                    Prepared monthly variance analyses comparing forecasted and
+                    actual expenses and investigated material discrepancies
+                    with finance staff.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
     <section id="projects">
 
         <h2>Projects</h2>
 
+        <p class="section-description">
+            Selected work demonstrating my experience with investing,
+            financial analysis, research, and data.
+        </p>
+
+
         <div class="projects-container">
 
-            <!-- Project 1 -->
+
+            <!-- PROJECT 1 -->
+
             <div class="project-card">
 
-                <h3>DCF Valuation Project</h3>
+                <h3>Personal Investment Portfolio</h3>
 
                 <p>
-                    Developed a discounted cash flow valuation model to estimate
-                    the intrinsic value of a publicly traded company. Analyzed
-                    financial statements, projected future cash flows, and evaluated
-                    key valuation assumptions.
+                    Manage a self-directed equity portfolio using fundamental
+                    company analysis, earnings results, valuation metrics,
+                    macroeconomic indicators, and benchmark analysis.
                 </p>
 
-                <!-- Replace # with your project link when available -->
-                <a href="#" target="_blank">View Project</a>
+                <a href="#investment-project" class="button">
+                    View Project
+                </a>
 
             </div>
 
-            <!-- Project 2 -->
+
+            <!-- PROJECT 2 -->
+
             <div class="project-card">
 
-                <h3>Business Analytics Project</h3>
+                <h3>Startup Investment Research</h3>
 
                 <p>
-                    Used SQL and Tableau to analyze business data, identify trends,
-                    and create visualizations that communicate key performance
-                    insights and support data-driven decision-making.
+                    Conducted investment research on early-stage AI and SaaS
+                    companies using company analysis, competitive research,
+                    market data, and Python-based workflows.
                 </p>
 
-                <!-- Replace # with your project link when available -->
-                <a href="#" target="_blank">View Project</a>
+                <a href="#research-project" class="button">
+                    View Project
+                </a>
 
             </div>
 
-            <!-- Project 3 -->
+
+            <!-- PROJECT 3 -->
+
             <div class="project-card">
 
-                <h3>Fantasy Football Analytics Website</h3>
+                <h3>Financial Forecasting & Variance Analysis</h3>
 
                 <p>
-                    Designed a web-based fantasy football project focused on
-                    presenting football information and analytics in an accessible
-                    format while exploring the use of real-time sports data.
+                    Applied Excel-based financial forecasting and variance
+                    analysis to support budgeting and financial decision-making
+                    during my corporate finance experience.
                 </p>
 
-                <!-- Replace # with your project link when available -->
-                <a href="#" target="_blank">View Project</a>
+                <a href="#forecasting-project" class="button">
+                    View Project
+                </a>
 
             </div>
 
@@ -272,10 +588,205 @@
 
     </section>
 
-    <!-- Footer -->
+
+    <!-- PROJECT DETAILS -->
+
+    <section id="project-details">
+
+        <h2>Project Details</h2>
+
+        <p class="section-description">
+            Additional information about my selected finance and investment work.
+        </p>
+
+
+        <!-- INVESTMENT PORTFOLIO -->
+
+        <div class="project-detail" id="investment-project">
+
+            <h3>Personal Investment Portfolio</h3>
+
+            <p>
+                <strong>Project Period:</strong> 2024 – Present
+            </p>
+
+            <p>
+                I manage a self-directed equity portfolio using fundamental
+                company analysis, earnings results, valuation metrics, and
+                macroeconomic indicators.
+            </p>
+
+            <p>
+                I track portfolio performance and risk exposure against relevant
+                benchmarks and document investment theses for individual positions.
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Fundamental Analysis, Equity Research, Valuation,
+                Portfolio Analysis, Risk Analysis
+            </p>
+
+            <a href="#projects" class="button">
+                Back to Projects
+            </a>
+
+        </div>
+
+
+        <!-- STARTUP RESEARCH -->
+
+        <div class="project-detail" id="research-project">
+
+            <h3>Startup Investment Research</h3>
+
+            <p>
+                <strong>Organization:</strong> EQIQ Capital
+            </p>
+
+            <p>
+                I evaluated more than 25 early-stage AI and SaaS companies
+                by analyzing business models, competitive positioning,
+                growth prospects, and investment risks.
+            </p>
+
+            <p>
+                I authored more than five research reports covering AI
+                infrastructure, LLM applications, and SaaS business models.
+            </p>
+
+            <p>
+                I also built Python workflows to analyze startup funding,
+                market-size, and competitor data across more than
+                25 investment targets.
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Investment Research, Python, Market Research,
+                Competitive Analysis, Data Analysis
+            </p>
+
+            <a href="#projects" class="button">
+                Back to Projects
+            </a>
+
+        </div>
+
+
+        <!-- FINANCIAL FORECASTING -->
+
+        <div class="project-detail" id="forecasting-project">
+
+            <h3>Financial Forecasting & Variance Analysis</h3>
+
+            <p>
+                <strong>Organization:</strong> MSN Labs
+            </p>
+
+            <p>
+                I built Excel forecasting models used for budget planning
+                during my corporate finance internship. The forecasting work
+                improved forecast accuracy by approximately 8%.
+            </p>
+
+            <p>
+                I also prepared monthly variance analyses comparing forecasted
+                expenses against actual results and investigated material
+                discrepancies with members of the finance team.
+            </p>
+
+            <p>
+                This work strengthened my ability to analyze financial data,
+                understand differences between expected and actual performance,
+                and communicate financial findings.
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Microsoft Excel, Financial Modeling, Forecasting,
+                Variance Analysis, Budgeting
+            </p>
+
+            <a href="#projects" class="button">
+                Back to Projects
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CERTIFICATIONS -->
+
+    <section id="certifications">
+
+        <h2>Certifications & Professional Development</h2>
+
+        <div class="certifications">
+
+            <div class="certification">
+                <strong>Bloomberg Market Concepts (BMC)</strong> — Certified
+            </div>
+
+            <div class="certification">
+                <strong>AI in Finance & Wealth Management Specialization</strong>
+                — University of Illinois Urbana-Champaign
+            </div>
+
+            <div class="certification">
+                <strong>Generative AI with LLMs</strong>
+                — DeepLearning.AI
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <h2>Connect With Me</h2>
+
+        <p>
+            Interested in finance, investing, financial technology,
+            and data-driven business decision-making.
+        </p>
+
+        <a href="mailto:pjangamareddy@gmail.com"
+           class="button">
+            Email Me
+        </a>
+
+        <a href="https://www.linkedin.com/in/pjangamareddy"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="button">
+            LinkedIn
+        </a>
+
+        <a href="#projects"
+           class="button">
+            View Projects
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
     <footer>
-        <p>&copy; 2026 Pranav Jangamareddy | Rutgers University</p>
+
+        <p>&copy; 2026 Pranav Jangamareddy</p>
+
+        <p>
+            Finance | Investment Research | Financial Analysis
+        </p>
+
     </footer>
+
 
 </body>
 
