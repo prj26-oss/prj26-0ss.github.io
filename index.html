@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Jangamareddy | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #111827;
+            padding: 18px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 22px;
+            color: #93c5fd;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        /* Main Sections */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #111827;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+            color: #1d4ed8;
+        }
+
+        .project-card p {
+            margin-bottom: 20px;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: white;
+            background-color: #2563eb;
+            padding: 10px 16px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .project-card a:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2>Pranav Jangamareddy</h2>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </div>
+    </nav>
+
+    <!-- Personal Statement -->
+    <header class="hero" id="about">
+        <h1>Pranav Jangamareddy</h1>
+
+        <h2>Finance Student | Financial Analysis | Business Analytics</h2>
+
+        <p>
+            Finance student at Rutgers Business School with experience in corporate
+            finance and a strong interest in financial analysis, technology, and
+            data-driven decision-making.
+        </p>
+    </header>
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">Financial Analysis</div>
+            <div class="skill">Financial Modeling</div>
+            <div class="skill">Microsoft Excel</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Tableau</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">Budgeting & Forecasting</div>
+            <div class="skill">Financial Reporting</div>
+            <div class="skill">PowerPoint</div>
+            <div class="skill">Research</div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects-container">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+
+                <h3>DCF Valuation Project</h3>
+
+                <p>
+                    Developed a discounted cash flow valuation model to estimate
+                    the intrinsic value of a publicly traded company. Analyzed
+                    financial statements, projected future cash flows, and evaluated
+                    key valuation assumptions.
+                </p>
+
+                <!-- Replace # with your project link when available -->
+                <a href="#" target="_blank">View Project</a>
+
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+
+                <h3>Business Analytics Project</h3>
+
+                <p>
+                    Used SQL and Tableau to analyze business data, identify trends,
+                    and create visualizations that communicate key performance
+                    insights and support data-driven decision-making.
+                </p>
+
+                <!-- Replace # with your project link when available -->
+                <a href="#" target="_blank">View Project</a>
+
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+
+                <h3>Fantasy Football Analytics Website</h3>
+
+                <p>
+                    Designed a web-based fantasy football project focused on
+                    presenting football information and analytics in an accessible
+                    format while exploring the use of real-time sports data.
+                </p>
+
+                <!-- Replace # with your project link when available -->
+                <a href="#" target="_blank">View Project</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Pranav Jangamareddy | Rutgers University</p>
+    </footer>
+
+</body>
+
+</html>
